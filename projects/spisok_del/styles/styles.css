@@ -1,20 +1,11 @@
 *{
     box-sizing: border-box;
 }
-html, body{
-    margin: 0;
+html,body{
+    height: 100%;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-    background: gray;
-}
-main{
-    display: flex;
-    justify-content: center;
-}
-main img{
-    width: 550px;
-    height: auto;
-    margin-top: 250px;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
 }
 header{
     width: 100%;
@@ -35,34 +26,34 @@ header{
     scale: 85%;
 }
 .button{
+    position: relative;
     margin: 32px;
-    width: 42px;
-    height: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
     background: none;
     border: none;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 8px;
+    width: 42px;
+    height: 42px;
     cursor: pointer;
-    position: relative;
     transition: all 0.4s ease-in-out;
 }
 .button:hover{
     scale: 115%;
 }
-.button .butt{
-    display: block;
-    width: 100%;
-    height: 3px;
-    background: white;
-    transition: all 0.4s linear;
-}
 .button.pushed .butt{
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translateY(50%);
+    transform: translateY(-50%);
+    transition: all 0.4s linear;
+}
+.button .butt{
+    height: 3px;
+    width: 100%;
+    background: white;
+    transition: all 0.4s linear;
 }
 .button.pushed .butt:nth-child(1){
     transform: rotate(225deg);
@@ -73,6 +64,11 @@ header{
 }
 .button.pushed .butt:nth-child(3){
     transform: rotate(315deg);
+}
+main{
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 .menu{
     padding: 0;
@@ -123,4 +119,7 @@ header{
     transition: all  0.4s linear;
     background: rgb(22, 91, 170);
     transform: translateX(-12%);
+}
+.box{
+    display: flex;
 }
