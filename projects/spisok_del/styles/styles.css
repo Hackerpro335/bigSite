@@ -121,5 +121,42 @@ main{
     transform: translateX(-12%);
 }
 .box{
+    width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#todoText{
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: larger;
+    margin: 15px 0 15px 0;
+}
+.list{
+    display: flex;
+    min-width: 550px;
+    height: auto;
+    border: 1px solid black;
+    flex-direction: column;
+    border-radius: 20px;
+}
+.list > div{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    padding: 0 20px 0 20px;
+}
+.list>div>p{
+    font-size: 19px;
+}
+.list>div>div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.list>div>div>button{
+    display: flex;
+    height: 20px;
+    width: auto;
 }
