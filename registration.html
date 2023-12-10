@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reg</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/reg/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Vina+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto&family=Vina+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="file:///D:/yurevich_tsikhan/dada/index.html" class="logo">ITStep</a>
+        <button class="button">
+            <span class="butt"></span>
+            <span class="butt"></span>
+            <span class="butt"></span>
+        </button>
+    </header>
+    <main>
+        <div class="menu" id="menu">
+           <ul>
+                <li><a href="file:///D:/yurevich_tsikhan/dada/index.html">Главная</a></li>
+                <li><a href="projects.html">Проекты</a></li>
+                <li><a href="">Обо мне</a></li>
+                <li><a href="">Контакты</a></li>
+           </ul>
+        </div>
+        <div id="reg-wrapper">
+            <div class="mBlock">
+                <div class="reg-form">
+                    <h2>Форма регистрации</h2>
+                    <form action="" method="POST">
+                        <div class="form-group">
+                            <label for="">Ф.И.О</label>
+                            <input type="text" class="form-control" name="fio" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Дата рождения</label>
+                            <input type="date" class="form-control" name="birthday" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Пол</label>
+                            <select name="sex" class="form-control">
+                                <option value="male">Мужской</option>
+                                <option value="female">Женский</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Номер телефона</label>
+                            <input type="text" class="form-control" name="number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Email</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Ссылка на GitHub</label>
+                            <input type="url" class="form-control" name="url-github" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Адрес</label>
+                            <textarea type="text" class="form-control" name="adress"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="form-control">Зарегестрировать</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-list">
+                    <div class="card">
+                        <img src="img/profileIcon.png">
+                        <div class="card-name">Test Tostovich</div>
+                        <div class="card-age">Возраст: 20 лет</div>
+                        <button class="">Инфо</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="script/script.js "></script>
+</html>

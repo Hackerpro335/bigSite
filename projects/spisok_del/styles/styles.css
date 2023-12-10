@@ -157,6 +157,19 @@ main{
 }
 .list>div>div>button{
     display: flex;
-    height: 20px;
+    height: 30px;
     width: auto;
+}
+.list>div>div>button>img{
+    height: 25px;
+    width: 25px;
+}
+#input{
+    display: flex;
+    width: 250px;
+    margin: 5px;
+}
+#addButt{
+    display: flex;
+    margin: 5px;
 }
