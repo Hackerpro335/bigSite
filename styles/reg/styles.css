@@ -32,6 +32,7 @@ main{
     border: 1px solid gray;
     padding-left: 10px;
     padding-right: 10px;
+    cursor: pointer;
 }
 .form-group .form-control:focus{
     outline: none;
