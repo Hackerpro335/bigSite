@@ -159,6 +159,7 @@ main{
     display: flex;
     height: 30px;
     width: auto;
+    cursor: pointer;
 }
 .list>div>div>button>img{
     height: 25px;
@@ -172,4 +173,5 @@ main{
 #addButt{
     display: flex;
     margin: 5px;
+    cursor: pointer;
 }
