@@ -40,6 +40,13 @@ main{
 .form-group textarea.form-control{
     height: 80px;
 }
+.form-group .form-control.error{
+    border-color: red !important;
+}
+.error{
+    color:red;
+    font-size: 13px;
+}
 .card-list{
     padding: 30px;
     display: flex;

@@ -35,10 +35,11 @@
             <div class="mBlock">
                 <div class="reg-form">
                     <h2>Форма регистрации</h2>
-                    <form action="" method="POST">
+                    <form action="" method="POST" onsubmit="return sendForm(event)">
                         <div class="form-group">
                             <label for="">Ф.И.О</label>
                             <input type="text" class="form-control" name="fio" required>
+                            <div class="error" id="name-error"></div>
                         </div>
                         <div class="form-group">
                             <label for="">Дата рождения</label>
@@ -54,6 +55,7 @@
                         <div class="form-group">
                             <label for="">Номер телефона</label>
                             <input type="text" class="form-control" name="number" required>
+                            <div class="error" id="phone-error"></div>
                         </div>
                         <div class="form-group">
                             <label for="">Email</label>
@@ -66,9 +68,10 @@
                         <div class="form-group">
                             <label for="">Адрес</label>
                             <textarea type="text" class="form-control" name="adress"></textarea>
+                            <div class="error" id="address-error"></div>
                         </div>
                         <div class="form-group">
-                            <button class="form-control">Зарегестрировать</button>
+                            <button class="form-control" type="submit">Зарегестрировать</button>
                         </div>
                     </form>
                 </div>
@@ -85,4 +88,5 @@
     </main>
 </body>
 <script src="script/script.js "></script>
+<script src="script/regscr/regscript.js"></script>
 </html>
