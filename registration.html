@@ -76,11 +76,14 @@
                     </form>
                 </div>
                 <div class="card-list">
-                    <div class="card">
+                    <div class="card" draggable="true" ondragstart="startDrag(event)">
                         <img src="img/profileIcon.png">
                         <div class="card-name">Test Tostovich</div>
                         <div class="card-age">Возраст: 20 лет</div>
-                        <button class="">Инфо</button>
+                        <button>Инфо</button>
+                    </div>
+                    <div class="card-remove" ondragenter="enterDrag(event)" ondragleave="leaveDrag(event)">
+                        <img src="img/trash-bin-5.png" class="trash-can">
                     </div>
                 </div>
             </div>

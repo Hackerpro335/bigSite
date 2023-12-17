@@ -53,6 +53,7 @@ main{
     align-items: flex-start;
     justify-content: flex-start;
     gap: 15px;
+    flex-wrap: wrap;
 }
 .card{
     display: flex;
@@ -80,4 +81,22 @@ main{
     padding-right: 5px 15px;
     color: white;
     cursor: pointer;
+}
+.card-remove{
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: rgb(4, 92, 121);
+    transition: all linear .4s;
+    border-radius: 20px;
+}
+.trash-can{
+    width: 60px;
+    height: 60px;
+    padding: 7px;
+}
+.active{
+    background: rgb(165, 160, 160);
 }
