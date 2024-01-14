@@ -1,3 +1,18 @@
+if(window.localStorage.getItem("id") && window.localStorage.getItem("name") && window.localStorage.getItem("age")){
+    let cardList = document.getElementsByClassName("card-list")[0];
+
+    if(cardList){
+       let newCard=( card.insertAdjacentHTML("beforeend", 
+        `<div class="card">
+        <img src="img/profileIcon.png">
+        <div class="card-name">${name}}</div>
+        <div class="card-age">Возраст: ${age}</div>
+        <button class="">Инфо</button>
+        </div>`));
+
+    }
+}
+
 function sendForm(event){
 
     let error = {};
@@ -59,19 +74,36 @@ function sendForm(event){
         return false;
     }
     else{
-        let card = document.getElementsByClassName("card-list")[0];
+        let cardList = document.getElementsByClassName("card-list")[0];
         
+       
+
         let now = new Date();
         let birthday = new Date(date);
         let age = now.getFullYear() - birthday.getFullYear();
+        let id = Math.floor(Math.random() * 1000);
 
-        card.insertAdjacentHTML("beforeend", 
+        let newCard = cardList.insertAdjacentHTML("beforeend", 
         `<div class="card">
         <img src="img/profileIcon.png">
         <div class="card-name">${name}</div>
         <div class="card-age">Возраст: ${age}</div>
         <button class="">Инфо</button>
-        </div>`)
+        </div>`);
+
+        let cards = document.getElementsByClassName("card");
+
+        if(cards.length > 0){
+            cardList.insertAdjacentHTML("beforeEnd", newCard);
+        }
+        else{
+            cardList.innerHTML = newCard;
+        }
+
+        let userData = `user-${id}&${event.target[0].value}&${event.target[1].value}&${now.getFullYear() - birthday.getFullYear()}&${event.target[2].value}&${event.target[3].value}&${event.target[4].value}&${event.target[5].value}&${event.target[6].value}`;
+
+        window.localStorage.setItem(`user-${id}`, userData);
+    
     }
     return false;
 }
