@@ -1,15 +1,24 @@
-if(window.localStorage.getItem("id") && window.localStorage.getItem("name") && window.localStorage.getItem("age")){
+if(window.localStorage.getItem("users"))
+{
+    let users = JSON.parse(window.localStorage.getItem("users"));
     let cardList = document.getElementsByClassName("card-list")[0];
 
     if(cardList){
-       let newCard=( card.insertAdjacentHTML("beforeend", 
-        `<div class="card">
-        <img src="img/profileIcon.png">
-        <div class="card-name">${name}}</div>
-        <div class="card-age">Возраст: ${age}</div>
-        <button class="">Инфо</button>
-        </div>`));
+        if(users.length > 0){
+            cardList.innerHTML = "";
 
+            users.forEach(function(user){
+                let newCard = 
+                `
+                <div class="card" draggable="true" ondragstart="startDrag(event)" id="user-${user.id}">
+                    <img src="img/profileIcon.png" alt="">
+                    <div class="card-name">${user.name}</div>
+                    <div class="card-age">Возраст: ${user.age}</div>
+                    <button>Инфо</button>
+                `
+                cardList.insertAdjacentHTML("beforeend", newCard);
+            });
+        }
     }
 }
 
@@ -19,7 +28,7 @@ function sendForm(event){
     let address = event.target[6].value;
 
     if(address.length < 10){
-        error.address = "слишком коротко";
+        error.address = "Слишком короткий адрес";
         let addressField = document.getElementById("address-error");
         addressField.innerHTML = error.address;
         addressField.previousElementSibling.classList.add("error");
@@ -34,7 +43,7 @@ function sendForm(event){
     let nameTemplate = /^[А-Я][а-яА-Я\s]*[а-яА-Я]$/g;
 
     if(!nameTemplate.test(name)){
-        error.name = "введите корректное имя";
+        error.name = "Введите корректное имя";
         let nameField = document.getElementById("name-error")
         nameField.innerHTML = error.name;
         nameField.previousElementSibling.classList.add("error");
@@ -49,7 +58,7 @@ function sendForm(event){
     let phoneTemplate = /^\+375[0-9]{9}$/g;
 
     if(!phoneTemplate.test(phone)){
-        error.phone = "введите правильный номер";
+        error.phone = "Введите правильный номер";
         let phoneField = document.getElementById("phone-error")
         phoneField.innerHTML = error.phone;
         phoneField.previousElementSibling.classList.add("error");
@@ -85,7 +94,7 @@ function sendForm(event){
 
         let newCard = cardList.insertAdjacentHTML("beforeend", 
         `<div class="card">
-        <img src="img/profileIcon.png">
+        <img src="images/avatar.png">
         <div class="card-name">${name}</div>
         <div class="card-age">Возраст: ${age}</div>
         <button class="">Инфо</button>
@@ -100,10 +109,28 @@ function sendForm(event){
             cardList.innerHTML = newCard;
         }
 
-        let userData = `user-${id}&${event.target[0].value}&${event.target[1].value}&${now.getFullYear() - birthday.getFullYear()}&${event.target[2].value}&${event.target[3].value}&${event.target[4].value}&${event.target[5].value}&${event.target[6].value}`;
+        let user = {
+            id: id,
+            name: event.target[0].value,
+            birthday: event.target[1].value,
+            age: now.getFullYear() - birthday.getFullYear(),
+            gender: event.target[2].value,
+            phone: event.target[3].value,
+            email: event.target[4].value,
+            url: event.target[5].value,
+            address: event.target[6].value
+        }
 
-        window.localStorage.setItem(`user-${id}`, userData);
-    
+        let users = [];
+
+        if(window.localStorage.getItem("users")){
+            users = JSON.parse(window.localStorage.getItem("users"));
+        }
+
+        users.push(user);
+
+        window.localStorage.setItem("users", JSON.stringify(users));
+
     }
     return false;
 }
